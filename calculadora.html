@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora</title>
+</head>
+<body>
+  <script>
+    // Pedir números y operación
+    let a = parseInt(prompt("Ingrese un número:"));
+    let b = parseInt(prompt("Ingrese otro número:"));
+    let operacion = prompt("¿Qué operación deseas hacer? (suma, resta, multiplicacion, division)");
+
+    // Funciones matemáticas
+    function suma(a, b) {
+      return a + b;
+    }
+
+    function resta(a, b) {
+      return a - b;
+    }
+
+    function multiplicacion(a, b) {
+      return a * b;
+    }
+
+    function division(a, b) {
+      return b !== 0 ? a / b : "Error: No se puede dividir por cero";
+    }
+
+    // Función principal
+    function calculadora(a, b, operacion) {
+      switch (operacion) {
+        case "suma":
+          return suma(a, b);
+        case "resta":
+          return resta(a, b);
+        case "multiplicacion":
+          return multiplicacion(a, b);
+        case "division":
+          return division(a, b);
+        default:
+          return "Operación no válida";
+      }
+    }
+
+    // Mostrar resultado
+    let resultado = calculadora(a, b, operacion);
+    alert("Resultado: " + resultado);
+  </script>
+</body>
+</html>
